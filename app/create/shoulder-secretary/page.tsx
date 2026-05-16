@@ -195,7 +195,7 @@ export default function ShoulderSecretaryPage() {
               {result.rewritten.subject}
             </p>
 
-            <h2 className="font-semibold mb-2">
+            <h2 className="blackspace-pre-wrap font-sans bg-gray-50 text-gray-900 p-4 rounded">
               本文
             </h2>
             <pre className="blackspace-pre-wrap font-sans bg-gray-50 text-gray-900 p-4 rounded">
