@@ -198,7 +198,7 @@ export default function ShoulderSecretaryPage() {
             <h2 className="font-semibold mb-2">
               本文
             </h2>
-            <pre className="whitespace-pre-wrap font-sans bg-gray-50 text-gray-900 p-4 rounded">
+            <pre className="blackspace-pre-wrap font-sans bg-gray-50 text-gray-900 p-4 rounded">
               {result.rewritten.body}
             </pre>
 
