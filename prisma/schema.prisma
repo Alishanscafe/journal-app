@@ -1,0 +1,18 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// 👇 ここから下が「論文（Paper）」のデータベース設計図です
+model Paper {
+  id        String   @id @default(uuid()) // 自動生成される固有ID
+  userId    String                        // ClerkのユーザーID
+  title     String                        // 論文のタイトル
+  content   Json                          // AIが生成した論文の中身（JSONデータ）
+  mode      String                        // adult(研究者) か child(自由研究) か
+  createdAt DateTime @default(now())      // 作成日時
+}
