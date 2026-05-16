@@ -4,12 +4,19 @@ import Link from "next/link";
 // 💡 lib/prisma.ts で default export された prisma を読み込む
 import prisma from "@/lib/prisma";
 
+type Paper = {
+  id: string;
+  title: string;
+  mode: string;
+  createdAt: Date;
+};
+
 export default async function MyPage() {
   const user = await currentUser();
   if (!user) redirect("/");
 
   // 💡 データベースから「このユーザーの論文」を最新順（desc）で取得
-  const papers = await prisma.paper.findMany({
+  const papers: Paper[] = await prisma.paper.findMany({
     where: { userId: user.id },
     orderBy: { createdAt: "desc" },
   });
@@ -45,7 +52,7 @@ export default async function MyPage() {
             </div>
           ) : (
             <ul className="space-y-4">
-              {papers.map((paper) => (
+              {papers.map((paper: Paper) => (
                 <li key={paper.id} className="p-4 border rounded-md hover:bg-stone-50 transition">
                   <div className="flex justify-between items-center">
                     <div>
@@ -67,4 +74,3 @@ export default async function MyPage() {
     </div>
   );
 }
-

@@ -50,7 +50,7 @@ export default function Header() {
             >
               👤 マイページ
             </Link>
-            <UserButton afterSignOutUrl="/" />
+            <UserButton />
           </>
         )}
       </nav>
