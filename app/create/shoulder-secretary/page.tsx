@@ -170,8 +170,8 @@ export default function ShoulderSecretaryPage() {
       )}
 
       {result && (
-        <div className="space-y-6">
-          <section className="border rounded-lg p-4 bg-gray-50">
+        <div className="space-y-6 text-gray-900">
+          <section className="border rounded-lg p-4 bg-gray-50 text-gray-900">
             <h2 className="font-semibold mb-2">
               肩の上の秘書　の分析結果
             </h2>
@@ -189,9 +189,9 @@ export default function ShoulderSecretaryPage() {
             </p>
           </section>
 
-          <section className="border rounded-lg p-4">
+          <section className="border rounded-lg p-4 text-gray-900">
             <h2 className="font-semibold mb-2">件名</h2>
-            <p className="mb-4">
+            <p className="mb-4 text-gray-900">
               {result.rewritten.subject}
             </p>
 
@@ -227,7 +227,7 @@ export default function ShoulderSecretaryPage() {
           </section>
 
           {result.warnings.length > 0 && (
-            <section className="border rounded-lg p-4 bg-yellow-50">
+            <section className="border rounded-lg p-4 bg-yellow-50 text-gray-900">
               <h2 className="font-semibold mb-2">
                 注意点
               </h2>
